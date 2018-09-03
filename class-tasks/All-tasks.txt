@@ -1,0 +1,11 @@
+Task#1: Print all even numbers in one set and odd numbers in another set. Condition: Don't use 2nd for loop and output can't be horizontal.
+
+Task#2: Print tables side-by-side
+
+Task#3. Search Internet for how to print without newline in Python. Ex: Print fibonacci number on one line rather than default output.
+
+Task#4: Recognize if the given integer is a mobile number without using count variable.
+
+Task#5: Program to pring combination of letters from two strings. Make changes to produce all the genuine combinations and it should work with other string with duplicates eliminated.
+
+Task#6: Program to split string into smaller batches. Write the code to do the unique split.
