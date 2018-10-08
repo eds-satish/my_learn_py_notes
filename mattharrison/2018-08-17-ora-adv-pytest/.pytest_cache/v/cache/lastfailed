@@ -1,0 +1,4 @@
+{
+  "skilift/test/test_skilift.py::test_lift_one_bench": true,
+  "skilift/test/test_skilift.py::test_line_take": true
+}
