@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 reg1 = re.compile(r"{\w.*?}")
 
 filename = input('Enter a filename: ')
-tree = ET.parse(filename)
+tree = ET.parse('/root/mypython-root/test-dir/'+filename)
 root = tree.getroot()
 
 """
@@ -30,12 +30,14 @@ for i in range(len(ctag)):
     print(ctag[i], cattr[i], ctxt[i], ctail[i], sep=' : ')
 
 """
-"""
+
 l2=[]
 for ele1 in root.iter():
-    l2.append(ele1.tag)
+    ele1_rm = ele1.tag.split("}")[1][0:]
+    l2.append(ele1_rm)    #ele.tag.split("}")[1][0:] (remove the xmlns - namespace string that get appended to everyline)
     
 print(l2)
+print(f'{len(l2):|^30}')
 l3=[]
 for i in l2:
     if i not in l3:
@@ -43,23 +45,19 @@ for i in l2:
 
 print('\n')
 print(l3)
+print(f'{len(l3):|^30}')
 print('\n'*2)
 print('{:|^30}'.format('centered'))
 print('\n'*2)
-"""
+
 #to iterate over all the child elements (all the tags it will go through)
 for ele in root.iter():
 #    print(ele.tag, ele.attrib, ele.text, ele.tail)
-    #tup = ele.tag, ele.attrib, ele.text, ele.tail
+    tup = ele.tag.split("}")[1][0:], ele.attrib, ele.text, ele.tail
     #print(list(tup))
-    tup = ele.tag.split("}")[1][0:], ele.attrib
     ll = list(tup)
     #ll.pop(0)
-    for scrub_norm in ll:
-        sanitize_norm = reg1.findall(str(scrub_norm))
-        if not sanitize_norm:
-            print(scrub_norm)
-    #print(ll)
+    print(ll)
     
 
 
